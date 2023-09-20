@@ -45,7 +45,7 @@ def new_expense(*args):
     Users_involved_with_money = []
     for user in Users_involved['users_involved']:
         Users_involved_with_money.append(user)
-        Users_involved_with_money.append(str(int(amount)/len(Users_involved['users_involved'])))
+        Users_involved_with_money.append(str(int(amount)/(len(Users_involved['users_involved'])+1)))
 
     with open("expense_report.csv", mode="a", newline="") as file:
         writer = csv.writer(file)

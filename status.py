@@ -47,5 +47,11 @@ def generate_status_report(expenses):
         if b < 0:
             combined_list[i] = (c, abs(b), a)
 
+    print("╭───────────────────────────── Debts ─────────────────────────────╮")
+    print("│ {:<12} {:<10} {:<12} {:<2} {:>10} {:<12} │".format("Debtor", "owes", "Creditor", "|", "Amount", "Recipient"))
+    print("├─────────────────────────────────────────────────────────────────┤")
+    
     for a, b, c in combined_list:
-            print(f"{a} owes {c} {abs(b)}")
+        print("│ {:<12} {:<10} {:<12} │ {:>10.2f} {:<12}  │".format(a, "owes", c, b, "€"))
+    
+    print("╰─────────────────────────────────────────────────────────────────╯")
